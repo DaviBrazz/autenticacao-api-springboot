@@ -30,3 +30,6 @@ jobs:
 
       - name: Build and run tests
         run: mvn clean verify
+
+      - name: Set JWT_SECRET environment variable
+        run: echo "JWT_SECRET=ciSecret123" >> $GITHUB_ENV
