@@ -6,7 +6,6 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- Spring Boot 4 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,7 +17,7 @@
 	<artifactId>autenticacao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>autenticacao</name>
-	<description>API de autenticação com Spring Security e JWT</description>
+	<description>API de autenticação com Spring Security, JWT e H2</description>
 
 	<properties>
 		<java.version>17</java.version>
@@ -26,7 +25,6 @@
 	</properties>
 
 	<dependencies>
-
 		<!-- Web / REST -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -39,7 +37,7 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
-		<!-- Validação (Bean Validation / Jakarta Validation) -->
+		<!-- Bean Validation -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
@@ -51,7 +49,7 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<!-- H2 (desenvolvimento / testes locais) -->
+		<!-- H2 Database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -85,16 +83,15 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
 		<plugins>
-
 			<!-- Compiler -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -107,12 +104,11 @@
 				</configuration>
 			</plugin>
 
-			<!-- Spring Boot -->
+			<!-- Spring Boot Plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
 		</plugins>
 	</build>
 
